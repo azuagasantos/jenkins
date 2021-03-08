@@ -36,7 +36,7 @@ $database = "pruebas";
 
 #Importo la base de datos
 
-$comando = shell_exec('mysql -u php -p1234 < /root/github/jenkins/schemaTiendaWeb.sql');
+$comando = shell_exec('mysql -u php -p1234 < ./schemaTiendaWeb.sql');
 
 class ClienteTest extends \PHPUnit\Framework\TestCase
 {
