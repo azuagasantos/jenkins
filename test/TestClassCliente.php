@@ -15,6 +15,29 @@
 require 'vendor/autoload.php';
 require 'ClassCliente.php';
 
+#Borro la base de datos para que no se dupliquen las primary keys.
+
+$servername = "localhost";
+$username = "php";
+$password = "1234";
+$database = "pruebas";
+
+        // Establecer conexión con la base de datos
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
+
+        $sql = "drop database pruebas;";
+
+        $conn->close();
+
+#Importo la base de datos
+
+$comando = shell_exec('mysql -u php -p1234 < /root/github/jenkins/schemaTiendaWeb.sql');
+
 class ClienteTest extends \PHPUnit\Framework\TestCase
 {
 
@@ -38,7 +61,6 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
 
         //Primera tanda
         //Primero calculo cuantas lineas hay en la tabla
-        $sql = "delete from clientes;";
         $sqlPrueba = "select * from clientes;";
         $resultado = $conn->query($sqlPrueba);
 
@@ -55,8 +77,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
         // Consulta para realizar la busqueda en la base de datos
         $clientesDespues = $resultado->num_rows;
 
-
-        $this->assertEquals($clientesAntes + null, $clientesDespues, "El cliente se da de alta correctamente");
+        $this->assertEquals($clientesAntes + 1, $clientesDespues, "El cliente se da de alta correctamente");
 
         //Segunda tanda
         $sqlPrueba = "select * from clientes where dni like '123456789';";
@@ -202,7 +223,6 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
         $resultado = $buscador->buscarCliente("equipo2tiendaweb@gmail.com","email",$conn);
 
         $this->assertEquals(null,$resultado,"Hemos buscado el email equipo2tiendaweb@gmail.com");
-
     }
 }
 

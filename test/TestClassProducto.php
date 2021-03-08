@@ -38,7 +38,6 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
 
         //Primera tanda
         //Primero calculo cuantas lineas hay en la tabla
-        $sql = "delete from productos;";
         $sqlPrueba = "select * from productos;";
         $resultado = $conn->query($sqlPrueba);
 
@@ -56,7 +55,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
         $productosDespues = $resultado->num_rows;
 
 
-        $this->assertEquals($productosAntes + null, $productosDespues, "El producto se ha insertado correctamente");
+        $this->assertEquals($productosAntes + 1, $productosDespues, "El producto se ha insertado correctamente");
 
         //Segunda tanda
         $sqlPrueba = "select * from productos where cod like '1';";
@@ -199,7 +198,6 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
         $resultado = $buscador->buscarProducto("23","stock",$conn);
 
         $this->assertEquals(null,$resultado,"Hemos buscado el stock 23");
-
     }
 }
 ?>
