@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Formulario Insertar.</title>
+	<meta charset="utf-8">
+</head>
+
+	<body>
+		<a href="index.html"><h1>Tienda Web V3.0</h1></a>
+		<h2>Añadir un nuevo producto</h2>
+
+		<form action="insertarProducto.php" method="POST">
+
+		<label for="codigo">Código de producto:</label>
+		<input class="form-control" name="codigo" required type="text" id="codigo" placeholder="Escribe el código"><br><br>
+
+		<label for="descripcion">Descripción:</label><br>
+		<textarea required id="descripcion" name="descripcion" cols="30" rows="3" class="form-control"></textarea><br><br>
+
+		<label for="precioVenta">Precio de venta:</label>
+		<input class="form-control" name="precio" required type="number" id="precioVenta" placeholder="Precio"><br><br>
+
+		<label for="stock">Stock:</label>
+		<input class="form-control" name="stock" required type="number" id="stock" step="1" min="0" placeholder="Stock"><br><br>
+
+		<input type="submit" />
+		</form>
+
+
+	</body>
+</html>
