@@ -67,7 +67,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
         // Consulta para realizar la busqueda en la base de datos
         $clientesAntes = $resultado->num_rows;
 
-        
+
         $clienteNuevo = new Cliente("juan", "bueno", "123456789", "2023-02-04", "equipo2tiendaweb@gmail.com");
 
         $clienteNuevo->darAlta($conn);
