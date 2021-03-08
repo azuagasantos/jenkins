@@ -38,6 +38,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
 
         //Primera tanda
         //Primero calculo cuantas lineas hay en la tabla
+        $sql = "delete from productos;";
         $sqlPrueba = "select * from productos;";
         $resultado = $conn->query($sqlPrueba);
 
@@ -45,7 +46,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
         $productosAntes = $resultado->num_rows;
 
 
-        $productoNuevo = new producto("71", "desc", "50", "50");
+        $productoNuevo = new producto("1", "desc", "23", "23");
 
         $productoNuevo->insertarProducto($conn);
 
@@ -55,10 +56,10 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
         $productosDespues = $resultado->num_rows;
 
 
-        $this->assertEquals($productosAntes + 1, $productosDespues, "El producto se ha insertado correctamente");
+        $this->assertEquals($productosAntes + null, $productosDespues, "El producto se ha insertado correctamente");
 
         //Segunda tanda
-        $sqlPrueba = "select * from productos where cod like '71';";
+        $sqlPrueba = "select * from productos where cod like '1';";
         $resultado = $conn->query($sqlPrueba);
 
         // Consulta para realizar la busqueda en la base de datos
@@ -96,9 +97,9 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
 
 
         //lanzo una peticion cliente->buscar("Ped","onom",$conn) que tiene que ser resultado == 1
-        $resultado = $buscador->buscarProducto("50","codigo",$conn);
+        $resultado = $buscador->buscarProducto("1","codigo",$conn);
 
-        $this->assertEquals(null,$resultado,"Hemos buscado el código 50");
+        $this->assertEquals(null,$resultado,"Hemos buscado el código 1");
 
     }
 
@@ -162,9 +163,9 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
 
 
         //lanzo una peticion cliente->buscar("Ped","onom",$conn) que tiene que ser resultado == 1
-        $resultado = $buscador->buscarProducto("34","precio",$conn);
+        $resultado = $buscador->buscarProducto("23","precio",$conn);
 
-        $this->assertEquals(null,$resultado,"Hemos buscado el precio 34");
+        $this->assertEquals(null,$resultado,"Hemos buscado el precio 23");
 
     }
 
@@ -195,9 +196,9 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
 
 
         //lanzo una peticion cliente->buscar("Ped","onom",$conn) que tiene que ser resultado == 1
-        $resultado = $buscador->buscarProducto("34","stock",$conn);
+        $resultado = $buscador->buscarProducto("23","stock",$conn);
 
-        $this->assertEquals(null,$resultado,"Hemos buscado el stock 34");
+        $this->assertEquals(null,$resultado,"Hemos buscado el stock 23");
 
     }
 }
