@@ -97,7 +97,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
     public function testBuscarClienteNombre()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -130,7 +130,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
     public function testBuscarClienteApellido()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -163,7 +163,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
     public function testBuscarClienteDNI()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -197,7 +197,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
     public function testBuscarClienteEmail()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";

@@ -73,7 +73,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
     public function testBuscarProductoCodigo()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -106,7 +106,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
     public function testBuscarProductoDescripcion()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -139,7 +139,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
     public function testBuscarProductoPrecio()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
@@ -172,7 +172,7 @@ class ProductoTest extends \PHPUnit\Framework\TestCase
     public function testBuscarProductoStock()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
