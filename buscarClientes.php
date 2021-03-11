@@ -3,7 +3,7 @@
 require './ClassCliente.php';
 
 // Variables
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "php";
 $password = "1234";
 $database = "pruebas";

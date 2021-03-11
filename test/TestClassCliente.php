@@ -17,7 +17,7 @@ require 'ClassCliente.php';
 
 #Borro la base de datos para que no se dupliquen las primary keys.
 
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "php";
 $password = "1234";
 $database = "pruebas";
@@ -45,7 +45,7 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
     public function testDarAlta()
     {
 
-        $servername = "localhost";
+        $servername = "localhost:3306";
         $username = "php";
         $password = "1234";
         $database = "pruebas";
